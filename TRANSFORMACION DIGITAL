@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformación Digital: Fomentando Nuevas Oportunidades</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        header { text-align: center; margin-bottom: 20px; }
+        h1 { color: #2c3e50; font-size: 2.5em; }
+        h2 { color: #2980b9; }
+        h3 { color: #27ae60; }
+        nav { margin: 20px 0; text-align: center; }
+        nav a { margin: 0 10px; color: #3498db; text-decoration: none; font-weight: bold; }
+        .hidden { display: none; }
+        .section { margin: 20px 0; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .preview { display: flex; gap: 10px; flex-wrap: wrap; }
+        .preview img, .preview video { max-width: 150px; max-height: 150px; border-radius: 8px; }
+        .error { color: red; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mi Primer Emprendimiento en 2024</h1>
+        <h2>Transformación Digital: Fomentando Nuevas Oportunidades</h2>
+    </header>
+
+    <nav>
+        <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+        <a href="#" onclick="mostrarSeccion('informacion')">Información</a>
+        <a href="#" onclick="mostrarSeccion('multimedia')">Multimedia</a>
+        <a href="#" onclick="mostrarSeccion('iniciarSesion')">Iniciar Sesión</a>
+    </nav>
+
+    <div id="inicio" class="section">
+        <h2>Bienvenido a nuestro Proyecto de Marketing Digital</h2>
+        <p>Este proyecto busca aprovechar las oportunidades que ofrece el mundo digital. A través del marketing digital, queremos capacitar a las personas...</p>
+        <img src="https://via.placeholder.com/150" alt="Imagen de Marketing Digital">
+    </div>
+
+    <div id="informacion" class="section hidden">
+        <h2>Información sobre Marketing Digital</h2>
+        <ul>
+            <li>Alcance global: Puedes llegar a clientes potenciales en cualquier parte del mundo.</li>
+            <li>Costos reducidos: Las campañas digitales suelen ser más económicas que las tradicionales.</li>
+            <li>Medición y análisis: Puedes analizar los resultados de tus campañas en tiempo real.</li>
+        </ul>
+    </div>
+
+    <div id="multimedia" class="section hidden">
+        <h2>Multimedia</h2>
+        <h3>Imágenes</h3>
+        <input type="file" id="imagenMultimedia" accept="image/*" onchange="mostrarImagenMultimedia(event)">
+        <div class="preview" id="vistaPreviaImagen"></div>
+        <h3>Videos</h3>
+        <input type="file" id="videoMultimedia" accept="video/*" onchange="mostrarVideoMultimedia(event)">
+        <div class="preview" id="vistaPreviaVideo"></div>
+    </div>
+
+    <div id="iniciarSesion" class="section hidden">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" id="correo" placeholder="Correo electrónico" required>
+        <input type="password" id="contrasena" placeholder="Contraseña" required>
+        <button onclick="iniciarSesion()">Iniciar Sesión</button>
+        <div id="mensajeError" class="error hidden"></div>
+    </div>
+
+    <div id="funcionalidades" class="section hidden">
+        <h2>Funcionalidades</h2>
+        <button onclick="mostrarSeccion('publicarProducto')">Publicar Producto</button>
+        <button onclick="mostrarSeccion('buscarProducto')">Buscar Producto</button>
+    </div>
+
+    <div id="publicarProducto" class="section hidden">
+        <h3>Publicar Producto</h3>
+        <input type="file" id="imagenesProducto" accept="image/*" multiple onchange="mostrarImagenesProducto(event)">
+        <div class="preview" id="vistaPreviaImagenesProducto"></div>
+        <input type="text" id="tituloProducto" placeholder="Título del Producto" required>
+        <input type="number" id="precioProducto" placeholder="Precio" required>
+        <textarea id="descripcionProducto" placeholder="Descripción" required></textarea>
+        <button onclick="publicar()">Publicar</button>
+    </div>
+
+    <div id="buscarProducto" class="section hidden">
+        <h3>Buscar Producto</h3>
+        <input type="text" id="buscarTitulo" placeholder="Título del Producto" required>
+        <button onclick="buscar()">Buscar</button>
+        <div id="resultadoBuscar" class="error hidden"></div>
+    </div>
+
+    <script>
+        function mostrarSeccion(seccionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(seccionId).classList.remove('hidden');
+        }
+
+        function iniciarSesion() {
+            const correo = document.getElementById("correo").value;
+            const contrasena = document.getElementById("contrasena").value;
+            const mensajeError = document.getElementById("mensajeError");
+
+            if (correo.includes("@") && contrasena.length > 0) {
+                mensajeError.classList.add("hidden");
+                mostrarSeccion("funcionalidades");
+            } else {
+                mensajeError.textContent = "Correo electrónico o contraseña incorrectos.";
+                mensajeError.classList.remove("hidden");
+            }
+        }
+
+        function mostrarImagenMultimedia(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = () => {
+                const img = document.createElement('img');
+                img.src = reader.result;
+                document.getElementById("vistaPreviaImagen").appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function mostrarVideoMultimedia(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = () => {
+                const video = document.createElement('video');
+                video.src = reader.result;
+                video.controls = true;
+                document.getElementById("vistaPreviaVideo").appendChild(video);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function mostrarImagenesProducto(event) {
+            const preview = document.getElementById("vistaPreviaImagenesProducto");
+            preview.innerHTML = "";
+            Array.from(event.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const img = document.createElement("img");
+                    img.src = reader.result;
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function publicar() {
+            const titulo = document.getElementById("tituloProducto").value;
+            const precio = document.getElementById("precioProducto").value;
+            const descripcion = document.getElementById("descripcionProducto").value;
+            alert(Producto publicado:\nTítulo: ${titulo}\nPrecio: ${precio}\nDescripción: ${descripcion});
+        }
+
+        function buscar() {
+            const buscarTitulo = document.getElementById("buscarTitulo").value;
+            const resultado = Buscando producto: ${buscarTitulo};
+            const resultadoDiv = document.getElementById("resultadoBuscar");
+            resultadoDiv.textContent = resultado;
+            resultadoDiv.classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>

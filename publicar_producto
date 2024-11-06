@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Producto</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-container h1 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #FFBF00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Publicar Producto</h1>
+        <form>
+            <input type="text" placeholder="Título del Producto" required><br><br>
+            <input type="number" placeholder="Precio" required><br><br>
+            <textarea placeholder="Descripción del Producto" rows="5" required></textarea><br><br>
+            <input type="file" accept="image/*" multiple required><br><br>
+            <button type="submit">Publicar Producto</button>
+        </form>
+    </div>
+
+</body>
+</html>

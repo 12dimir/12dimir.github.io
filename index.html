@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformación Digital: Fomentando Nuevas Oportunidades</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #f7b733);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin: 10px 0 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 200vh;
+            background-image: url('imagen/escudo.jpg'); /* Cambia 'tu-imagen.jpg' por el nombre de tu imagen */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .overlay h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .overlay p {
+            font-size: 1.5em;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px 0;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #imagenInicio {
+            margin-top: 20px;
+        }
+
+        .preview {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .preview img {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MI PRIMER EMPRENDIMIENTO 2024</h1>
+        <h2>Transformación Digital: Fomentando Nuevas Oportunidades Hacia Un Mundo Tecnológico y Emprendedor</h2>
+    </header>
+
+    <nav>
+        <a href="informacion.html">Información</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="iniciarSesion.html">Iniciar Sesión</a>
+    </nav>
+
+    <div class="image-container">
+        <div class="overlay">
+            <h2>¡Bienvenido a Transformación Digital!</h2>
+            <p>
+                ¡Bienvenido a <strong>Transformación Digital</strong>, el espacio donde el futuro del comercio y la innovación se encuentran! Aquí, ofrecemos las herramientas para que puedas llevar tu negocio al siguiente nivel y conectar con una comunidad global. La digitalización está cambiando la forma en que interactuamos con el mundo, y ahora tienes la oportunidad de formar parte de esta evolución.
+            </p>
+            <p>
+                <strong>¿Por qué elegirnos?</strong>
+                <br>1. <strong>Adaptación Total al Comercio Global:</strong> Crea una presencia sólida en línea y accede a nuevas oportunidades de negocio con nuestras herramientas fáciles de usar.
+                <br>2. <strong>Innovación y Soporte:</strong> Desde la publicación de productos hasta el marketing digital, te guiamos en cada paso para que aproveches al máximo las ventajas del mundo digital.
+                <br>3. <strong>Conexión Global:</strong> Establece relaciones comerciales con clientes y emprendedores de todo el mundo, creando una red sólida y productiva.
+            </p>
+            <p>
+                <strong>¡La transformación comienza ahora, y tú eres parte de ella!</strong>
+            </p>
+            <input type="file" id="imagenInicio" accept="image/*" onchange="mostrarImagen(event)">
+            <h3></h3>
+            <div class="preview" id="vistaPreviaImagen"></div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarImagen(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function() {
+                const img = document.getElementById('imagenPreviaInicio');
+                img.src = reader.result;
+                img.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>

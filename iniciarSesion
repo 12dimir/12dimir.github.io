@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Transformación Digital</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff6b6b, #f7b733 60%);
+            color: #333;
+        }
+
+        /* Contenedor general */
+        .container {
+            width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: none;
+        }
+
+        /* Formulario de inicio de sesión */
+        #login-form {
+            display: block;
+        }
+
+        h1 {
+            color: #4f73b7;
+        }
+
+        input[type="email"], input[type="password"], input[type="text"], input[type="number"], input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4f73b7;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        /* Diseño para las opciones después de iniciar sesión */
+        #options-container {
+            display: none;
+        }
+
+        #options-container button {
+            margin-top: 20px;
+        }
+
+        /* Diseño para la sección de publicación de producto */
+        #publish-product, #search-product {
+            display: none;
+        }
+
+        #publish-product label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        #product-image-preview {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        /* Diseño de la sección de búsqueda de producto */
+        #search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-result, .published-products {
+            background-color: #f2f2f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 100%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-form">
+        <h1>Iniciar sesión</h1>
+        <form onsubmit="login(event)">
+            <input type="email" placeholder="Correo electrónico" required><br>
+            <input type="password" placeholder="Contraseña" required><br>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <button type="button" onclick="goToHomePage()">Volver al Inicio</button>
+    </div>
+
+    <div class="container" id="options-container">
+        <h1>Selecciona una opción</h1>
+        <button onclick="showSection('publish-product')">Publicar Producto</button>
+        <button onclick="showSection('search-product')">Buscar Producto</button>
+    </div>
+
+    <div class="container" id="publish-product">
+        <h1>Publicar Producto</h1>
+        <form>
+            <label for="product-title">Título</label>
+            <input type="text" id="product-title" placeholder="Título del producto" required>
+            <label for="product-price">Precio</label>
+            <input type="number" id="product-price" placeholder="Precio en $" required>
+            <label for="product-description">Descripción</label>
+            <textarea id="product-description" placeholder="Descripción del producto" required></textarea>
+            <label for="product-image">Imagen</label>
+            <input type="file" id="product-image" accept="image/*" onchange="previewImage()" required>
+            <img id="product-image-preview" style="display: none;">
+            <button type="button" onclick="publishProduct()">Publicar</button>
+            <button type="button" onclick="showSection('options-container')">Volver Atrás</button>
+        </form>
+    </div>
+
+    <div class="container" id="search-product">
+        <h1>Buscar Producto</h1>
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Buscar por título" oninput="searchProduct()">
+            <div id="search-results" class="published-products"></div>
+            <button type="button" onclick="goToHomePage()">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script>
+        let publishedProducts = [];
+
+        function login(event) {
+            event.preventDefault();
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('options-container').style.display = 'block';
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(container => container.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function previewImage() {
+            const file = document.getElementById('product-image').files[0];
+            const preview = document.getElementById('product-image-preview');
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    preview.src = reader.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function publishProduct() {
+            const title = document.getElementById('product-title').value;
+            const price = document.getElementById('product-price').value;
+            const description = document.getElementById('product-description').value;
+            const image = document.getElementById('product-image-preview').src;
+            
+            const product = { title, price, description, image };
+            publishedProducts.push(product);
+            
+            alert("Producto publicado:\nTítulo: " + title + "\nPrecio: $" + price + "\nDescripción: " + description);
+            
+            document.getElementById('product-title').value = '';
+            document.getElementById('product-price').value = '';
+            document.getElementById('product-description').value = '';
+            document.getElementById('product-image').value = '';
+            document.getElementById('product-image-preview').style.display = 'none';
+        }
+
+        function searchProduct() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const searchResults = document.getElementById('search-results');
+            searchResults.innerHTML = '';
+
+            publishedProducts.forEach(product => {
+                if (product.title.toLowerCase().includes(searchInput)) {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'product-result';
+                    productDiv.innerHTML = `
+                        <h2>${product.title}</h2>
+                        <p>Precio: $${product.price}</p>
+                        <p>${product.description}</p>
+                        <img src="${product.image}" style="width: 100%; height: auto; margin-top: 10px;">
+                        <div id="message-section">
+                            <h3>Mensajes al vendedor</h3>
+                            <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                            <button onclick="sendMessage()">Enviar</button>
+                        </div>
+                    `;
+                    searchResults.appendChild(productDiv);
+                }
+            });
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('message-input');
+            if (messageInput.value.trim() !== "") {
+                alert("Mensaje enviado: " + messageInput.value);
+                messageInput.value = ""; // Limpiar el campo después de enviar el mensaje
+            }
+        }
+
+        function goToHomePage() {
+            // Redirige al usuario a la página principal (index.html)
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

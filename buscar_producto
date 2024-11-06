@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Producto</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .search-container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .search-container h1 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .search-container input {
+            width: 70%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .search-container button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            background-color: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #FFBF00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <h1>Buscar Producto</h1>
+        <input type="text" placeholder="Buscar por título" required><br><br>
+        <button type="submit">Buscar</button>
+
+        <!-- Aquí se mostraría el resultado de la búsqueda -->
+        <div id="resultados">
+            <!-- Ejemplo de producto encontrado -->
+            <p><strong>Título:</strong> Producto 1</p>
+            <p><strong>Descripción:</strong> Esta es la descripción del producto.</p>
+            <button>Mensaje al Vendedor</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Digital - Información</title>
+    <style>
+        /* Fondo de la página */
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('imagen/logo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sección de bienvenida */
+        .bienvenida {
+            text-align: center;
+            padding: 50px;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #FFD700; /* Color dorado para el título */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f89706; /* Color azul claro para el subtítulo */
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #f8ac09; /* Color azul claro para el párrafo */
+        }
+
+        /* Estilo para las preguntas y respuestas */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            border-radius: 10px;
+        }
+
+        .faq h3, .faq h4 {
+            color: #FFD700; /* Color dorado para las preguntas y subtítulos */
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .faq p {
+            font-size: 1.1rem;
+            color: #f1f1f1;
+            margin-bottom: 15px;
+        }
+
+        .faq p strong {
+            color: #FFD700; /* Color dorado para las respuestas */
+        }
+
+        .acciones {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .acciones button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Imagen en la parte superior de la página */
+        .imagen-arriba {
+            width: 100%;
+            height: 300px; /* Ajusta el tamaño según necesites */
+            object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Imagen en la parte superior -->
+    <img src="imagen-arriba.jpg" alt="Imagen arriba" class="imagen-arriba">
+
+    <!-- Sección de bienvenida -->
+    <div class="bienvenida">
+        <h1>Marketing Digital</h1>
+        <h2>Conoce los Fundamentos y Conceptos Claves del Marketing Digital</h2>
+        <p>El Marketing Digital es esencial para el crecimiento de los negocios en la era tecnológica actual. Aquí encontrarás los conceptos más importantes y cómo pueden ayudarte a avanzar en tu emprendimiento.</p>
+    </div>
+
+    <!-- Sección de Preguntas y Respuestas -->
+    <div class="faq">
+        <h3>¿Qué es el Marketing Digital?</h3>
+        <p><strong>Marketing Digital</strong> se refiere al uso de herramientas, plataformas y estrategias digitales para promover productos, servicios o marcas. Incluye el uso de canales como redes sociales, motores de búsqueda, correos electrónicos y sitios web. Este tipo de marketing tiene como principal ventaja su capacidad de segmentar audiencias específicas a través de datos recogidos en tiempo real.</p>
+
+        <h3>¿Cuáles son los principales componentes del Marketing Digital?</h3>
+        <p><strong>SEO (Search Engine Optimization):</strong> Es el proceso de optimizar tu sitio web para mejorar su visibilidad en los motores de búsqueda como Google. Esto se logra a través de la optimización de palabras clave, contenido de calidad, enlaces internos y externos, y la estructura adecuada del sitio web.</p>
+        <p><strong>Publicidad en Redes Sociales:</strong> La publicidad en plataformas como Facebook, Instagram, Twitter y LinkedIn permite llegar a audiencias muy específicas mediante anuncios pagos o estrategias orgánicas. Esta es una de las formas más efectivas de aumentar la visibilidad de tu marca, con opciones de segmentación que permiten alcanzar el público adecuado.</p>
+        <p><strong>Marketing de Contenido:</strong> Crear contenido relevante y valioso para tu audiencia es una de las formas más efectivas de atraer y retener clientes. El marketing de contenido incluye blogs, videos, infografías, podcasts y más, y debe ser diseñado para responder a las necesidades y dudas de los usuarios.</p>
+        <p><strong>Marketing por Correo Electrónico:</strong> Consiste en usar el correo electrónico para enviar mensajes a una lista de contactos. Es una de las estrategias más antiguas pero más efectivas, ya que permite mantener una comunicación directa con los usuarios interesados y potenciales clientes.</p>
+
+        <h3>Ventajas del Marketing Digital</h3>
+        <h4>Alcance Global</h4>
+        <p>Una de las mayores ventajas del marketing digital es su capacidad para llegar a una audiencia global. No importa en qué parte del mundo se encuentre tu público objetivo, las herramientas de marketing digital te permiten conectar con ellos de manera eficiente.</p>
+        
+        <h4>Costos Reducidos</h4>
+        <p>El marketing digital es más económico en comparación con los métodos tradicionales. Las campañas de publicidad en redes sociales, SEO y marketing por correo electrónico pueden ser mucho más accesibles que las campañas publicitarias en televisión o radio.</p>
+
+        <h4>Medición y Análisis en Tiempo Real</h4>
+        <p>Una de las grandes ventajas del marketing digital es la posibilidad de medir los resultados en tiempo real. Las plataformas digitales proporcionan métricas detalladas sobre la interacción de los usuarios, lo que permite ajustar las estrategias de marketing en tiempo real para obtener mejores resultados.</p>
+
+        <h3>Desventajas del Marketing Digital</h3>
+        <h4>Dependencia de la Tecnología</h4>
+        <p>El marketing digital está completamente basado en la tecnología, por lo que si hay problemas con las plataformas, la conexión a Internet o las herramientas utilizadas, las campañas pueden verse afectadas. Esto puede ser una desventaja significativa en situaciones de fallos técnicos.</p>
+
+        <h4>Competencia Intensa</h4>
+        <p>Dado que muchas empresas están adoptando el marketing digital, la competencia puede ser feroz. Las marcas deben destacar en un mar de información y contenido, lo que puede ser desafiante, especialmente para los nuevos emprendedores.</p>
+
+        <h3>¿Por qué es importante el Marketing Digital?</h3>
+        <p>El marketing digital es crucial para el éxito de cualquier negocio hoy en día. Permite a las empresas llegar a más personas de manera más efectiva y económica que los métodos tradicionales. Además, las herramientas digitales permiten personalizar la experiencia del usuario y brindar un servicio más eficiente y orientado al cliente.</p>
+
+        <h3>¿Cómo puedo comenzar con el Marketing Digital?</h3>
+        <p>Para comenzar, es fundamental definir tus objetivos comerciales. ¿Qué quieres lograr con tu marketing digital? Una vez que tengas claro esto, puedes seleccionar las herramientas y estrategias que más se ajusten a tu tipo de negocio y a tu audiencia. Puedes empezar con la creación de un sitio web, establecer presencia en redes sociales y utilizar el marketing de contenido para atraer a tu público objetivo.</p>
+
+        <h3>¿Qué es el SEO y cómo afecta a mi negocio?</h3>
+        <p><strong>SEO</strong> (Search Engine Optimization) es el proceso de optimizar tu sitio web para que aparezca en las primeras posiciones de los resultados de búsqueda en motores como Google. Un buen SEO incrementa la visibilidad de tu negocio, lo que puede atraer más tráfico a tu página web, generando más oportunidades de venta. Las estrategias de SEO incluyen la optimización de palabras clave, la creación de contenido relevante y la obtención de enlaces externos de calidad.</p>
+
+        <h3>¿Qué es el Marketing de Influencers?</h3>
+        <p><strong>Marketing de Influencers</strong> es una estrategia en la que marcas colaboran con personas influyentes en redes sociales para promover productos o servicios. Los influencers tienen una gran cantidad de seguidores que confían en sus opiniones, por lo que su recomendación puede impactar en las decisiones de compra de sus seguidores.</p>
+
+        <h3>¿Cuáles son los beneficios del Marketing por Correo Electrónico?</h3>
+        <p>El marketing por correo electrónico permite llegar directamente a la bandeja de entrada de los clientes, lo que aumenta las posibilidades de conversión. Además, es una de las formas más rentables de marketing digital, ya que puedes crear campañas personalizadas que se adapten a las necesidades de tus usuarios.</p>
+    </div>
+
+    <!-- Sección de acciones -->
+    <div class="acciones">
+        <button onclick="window.location.href='multimedia.html'">Ver más</button>
+        <button onclick="window.location.href='index.html'">Volver al inicio</button>
+    </div>
+
+</body>
+</html>

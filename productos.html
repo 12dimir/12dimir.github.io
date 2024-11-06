@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            border: 2px solid #4f73b7;
+        }
+
+        h1 {
+            color: #4f73b7;
+            font-size: 2rem;
+        }
+
+        button {
+            background-color: #4f73b7;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #70c1b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selecciona una opción</h1>
+        <button onclick="window.location.href='publicar_producto.html'">Publicar Producto</button>
+        <button onclick="window.location.href='buscar_producto.html'">Buscar Producto</button>
+    </div>
+</body>
+</html>
